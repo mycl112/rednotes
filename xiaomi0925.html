@@ -1,0 +1,587 @@
+html
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小米9.25日发布会全程回顾 | 高端视觉报告</title>
+    <link href="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-100-M/font-awesome/6.0.0/css/all.min.css"  rel="stylesheet">
+    <link href="https://s2.ssl.qhres2.com/static/56662140ef7d5d03.css"  rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;700&display=swap'); 
+        
+        :root {
+            --primary: #FF6700;
+            --secondary: #333333;
+            --accent: #1E88E5;
+            --paper: #FFF9F5;
+            --ink: #333333;
+            --highlight: #FFE0B2;
+        }
+        
+        body {
+            font-family: 'Noto Serif SC', serif;
+            background-color: var(--paper);
+            color: var(--ink);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            opacity: 0;
+            animation: fadeIn 1s ease-in-out forwards;
+        }
+        
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        .title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .title::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), transparent);
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            color: var(--secondary);
+            font-weight: 300;
+            margin-bottom: 2rem;
+        }
+        
+        .date {
+            font-style: italic;
+            color: #666;
+            margin-bottom: 3rem;
+        }
+        
+        .section {
+            margin-bottom: 4rem;
+            position: relative;
+        }
+        
+        .section-title {
+            font-size: 2.2rem;
+            color: var(--secondary);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px dashed var(--primary);
+            display: inline-block;
+        }
+        
+        .product-card {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+        
+        .product-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255,103,0,0.05) 0%, rgba(255,103,0,0) 100%);
+            z-index: 0;
+        }
+        
+        .product-name {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .product-price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .specs-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .specs-table th, .specs-table td {
+            padding: 0.8rem 1rem;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .specs-table th {
+            font-weight: 700;
+            color: var(--secondary);
+            background-color: rgba(255,103,0,0.1);
+        }
+        
+        .specs-table tr:hover td {
+            background-color: var(--highlight);
+        }
+        
+        .highlight {
+            background-color: var(--highlight);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-weight: 700;
+        }
+        
+        .comparison {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .comparison-item {
+            flex: 1;
+            min-width: 300px;
+            background-color: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .comparison-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .comparison-title {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 0.5rem;
+        }
+        
+        .feature-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        .feature-list li {
+            padding: 0.5rem 0;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .feature-list li::before {
+            content: "•";
+            color: var(--primary);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        .price-tag {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-weight: 700;
+            margin-right: 0.5rem;
+        }
+        
+        .hand-drawn-border {
+            position: relative;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .hand-drawn-border::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border: 2px solid var(--primary);
+            border-radius: 15px;
+            pointer-events: none;
+            animation: drawBorder 1.5s ease-in-out forwards;
+            clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
+        }
+        
+        @keyframes drawBorder {
+            0% { clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%); }
+            50% { clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 100%); }
+            100% { clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%); }
+        }
+        
+        .sketch-icon {
+            font-size: 1.2rem;
+            margin-right: 0.5rem;
+            color: var(--primary);
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 4rem;
+            padding: 2rem 0;
+            border-top: 1px solid #eee;
+            color: #666;
+            font-size: 16pt;
+        }
+        
+        @media (max-width: 768px) {
+            .title {
+                font-size: 2.5rem;
+            }
+            
+            .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .product-name {
+                font-size: 1.5rem;
+            }
+            
+            .comparison {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="title">小米9.25日发布会</h1>
+            <h2 class="subtitle">全面对标iPhone 17的科技盛宴</h2>
+            <p class="date">2025年9月25日 · 北京</p>
+        </header>
+        
+        <div class="section">
+            <h2 class="section-title">旗舰手机系列</h2>
+            
+            <div class="hand-drawn-border">
+                <div class="product-card">
+                    <h3 class="product-name">小米17 标准版</h3>
+                    <div class="product-price">
+                        <span class="price-tag">¥4,499起</span>
+                        <span>12+256GB: ¥4,499 | 12+512GB: ¥4,799</span>
+                    </div>
+                    
+                    <table class="specs-table">
+                        <tr>
+                            <th colspan="2">核心配置</th>
+                        </tr>
+                        <tr>
+                            <td>处理器</td>
+                            <td>第五代骁龙8至尊版 (3nm制程, 4.6GHz主频)</td>
+                        </tr>
+                        <tr>
+                            <td>屏幕</td>
+                            <td>6.3英寸OLED, 极窄边框, 超大R角设计</td>
+                        </tr>
+                        <tr>
+                            <td>机身</td>
+                            <td>8.06mm厚度, 191g重量</td>
+                        </tr>
+                        <tr>
+                            <td>电池</td>
+                            <td>7000mAh硅碳电池 (16%含硅量), 100W快充</td>
+                        </tr>
+                        <tr>
+                            <td>影像系统</td>
+                            <td>
+                                徕卡三摄: 5000万像素光影猎人950主摄(1/1.3英寸)<br>
+                                浮动长焦镜头 (10cm微距+远摄)<br>
+                                5000万像素前置超感光相机
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>散热系统</td>
+                            <td>立体环形冷泵散热 (导热效率3倍于传统VC)</td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <div class="product-card">
+                    <h3 class="product-name">小米17 Pro</h3>
+                    <div class="product-price">
+                        <span class="price-tag">¥4,999起</span>
+                        <span>12+256GB: ¥4,999 | 12+512GB: ¥5,299</span>
+                    </div>
+                    
+                    <table class="specs-table">
+                        <tr>
+                            <th colspan="2">Pro版升级亮点</th>
+                        </tr>
+                        <tr>
+                            <td>特色功能</td>
+                            <td>妙享背屏 (摄像头模组右侧显示区域)</td>
+                        </tr>
+                        <tr>
+                            <td>影像升级</td>
+                            <td>
+                                光影猎人950L主摄 (LOFIC高动态技术)<br>
+                                5x徕卡浮动长焦 (10倍无损变焦)<br>
+                                徕卡光学镀膜大满贯 (减少眩光鬼影)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>互联功能</td>
+                            <td>UWB超宽带互联 (靠近车辆自动解锁等)</td>
+                        </tr>
+                        <tr>
+                            <td>电池</td>
+                            <td>6300mAh, 8mm超薄机身设计</td>
+                        </tr>
+                        <tr>
+                            <td>外观</td>
+                            <td>森野绿/冷烟紫/黑白四色, 小米龙晶玻璃</td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <div class="product-card">
+                    <h3 class="product-name">小米17 Pro Max</h3>
+                    <div class="product-price">
+                        <span class="price-tag">¥5,999起</span>
+                        <span>12+256GB: ¥5,999 | 12+512GB: ¥6,299</span>
+                    </div>
+                    
+                    <table class="specs-table">
+                        <tr>
+                            <th colspan="2">Max版独特配置</th>
+                        </tr>
+                        <tr>
+                            <td>屏幕</td>
+                            <td>6.9英寸超大直屏, 超级像素技术 (等效2K)</td>
+                        </tr>
+                        <tr>
+                            <td>影像系统</td>
+                            <td>
+                                1/2英寸超大底潜望长焦<br>
+                                超聚光棱镜技术 (进光量提升30%)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>电池</td>
+                            <td>7500mAh超大容量, 100W有线+50W无线快充</td>
+                        </tr>
+                        <tr>
+                            <td>机身</td>
+                            <td>8mm厚度, 219g重量</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="comparison">
+                <div class="comparison-item">
+                    <h3 class="comparison-title">续航对比</h3>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-bolt sketch-icon"></i>小米17: 7000mAh硅碳电池</li>
+                        <li><i class="fas fa-battery-full sketch-icon"></i>重度测试12.2小时剩余26%电量</li>
+                        <li><i class="fas fa-tachometer-alt sketch-icon"></i>iPhone 17耗尽电量+5000mAh充电宝后关机</li>
+                    </ul>
+                </div>
+                
+                <div class="comparison-item">
+                    <h3 class="comparison-title">影像对比</h3>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-camera sketch-icon"></i>徕卡光影大师系统</li>
+                        <li><i class="fas fa-sun sketch-icon"></i>16.5EV动态范围 (逆光场景优化)</li>
+                        <li><i class="fas fa-moon sketch-icon"></i>超聚光棱镜技术 (弱光长焦提升30%)</li>
+                    </ul>
+                </div>
+                
+                <div class="comparison-item">
+                    <h3 class="comparison-title">性能对比</h3>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-microchip sketch-icon"></i>第五代骁龙8至尊版</li>
+                        <li><i class="fas fa-fire sketch-icon"></i>Geekbench多核跑分12000+</li>
+                        <li><i class="fas fa-snowflake sketch-icon"></i>立体环形冷泵散热 (游戏帧率更高,温度更低)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">平板与生态产品</h2>
+            
+            <div class="hand-drawn-border">
+                <div class="product-card">
+                    <h3 class="product-name">小米平板8系列</h3>
+                    <div class="product-price">
+                        <span class="price-tag">¥2,199起</span>
+                        <span>标准版: ¥2,199 | Pro版: ¥2,799</span>
+                    </div>
+                    
+                    <table class="specs-table">
+                        <tr>
+                            <th colspan="2">共同配置</th>
+                        </tr>
+                        <tr>
+                            <td>屏幕</td>
+                            <td>11.2英寸3.2K LCD (800尼特亮度)</td>
+                        </tr>
+                        <tr>
+                            <td>音频</td>
+                            <td>杜比全景声四扬声器</td>
+                        </tr>
+                        <tr>
+                            <td>接口</td>
+                            <td>Type-C USB3.2 Gen1, 支持反向充电</td>
+                        </tr>
+                        <tr>
+                            <td>系统</td>
+                            <td>澎湃OS3 (兼容苹果生态)</td>
+                        </tr>
+                        <tr>
+                            <th colspan="2">版本差异</th>
+                        </tr>
+                        <tr>
+                            <td>Pro版</td>
+                            <td>骁龙8至尊版, 67W快充, 可选柔光屏(+¥200)</td>
+                        </tr>
+                        <tr>
+                            <td>标准版</td>
+                            <td>第四代骁龙8s, 45W快充</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="comparison">
+                <div class="comparison-item">
+                    <h3 class="comparison-title">小米电视S Pro MiniLED</h3>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-tv sketch-icon"></i>广视角低反屏, 0.9mm极窄黑边</li>
+                        <li><i class="fas fa-brain sketch-icon"></i>澎湃OS3, 超级小爱助手</li>
+                        <li><i class="fas fa-tag sketch-icon"></i>起售价: ¥5,199</li>
+                    </ul>
+                </div>
+                
+                <div class="comparison-item">
+                    <h3 class="comparison-title">米家冰箱Pro微冰鲜</h3>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-snowflake sketch-icon"></i>560升法式, 微冰鲜技术(肉类保鲜10天)</li>
+                        <li><i class="fas fa-bacteria sketch-icon"></i>全链路抗菌制冰系统</li>
+                        <li><i class="fas fa-tag sketch-icon"></i>首销价: ¥6,399</li>
+                    </ul>
+                </div>
+                
+                <div class="comparison-item">
+                    <h3 class="comparison-title">米家洗衣机Pro</h3>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-tshirt sketch-icon"></i>超电解技术, 祛渍净白</li>
+                        <li><i class="fas fa-heartbeat sketch-icon"></i>专业内衣与袜子洗程序</li>
+                        <li><i class="fas fa-tag sketch-icon"></i>首销价: ¥3,999</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="comparison">
+                <div class="comparison-item">
+                    <h3 class="comparison-title">小米路由器BE10000 Pro</h3>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-wifi sketch-icon"></i>三频万兆无线+双万兆有线</li>
+                        <li><i class="fas fa-hdd sketch-icon"></i>M.2接口+USB端口扩展存储</li>
+                        <li><i class="fas fa-tag sketch-icon"></i>售价: ¥1,699</li>
+                    </ul>
+                </div>
+                
+                <div class="comparison-item">
+                    <h3 class="comparison-title">小米Sound2 Max音箱</h3>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-music sketch-icon"></i>定制三分频喇叭系统</li>
+                        <li><i class="fas fa-wave-square sketch-icon"></i>智能空间音频校准</li>
+                        <li><i class="fas fa-tag sketch-icon"></i>售价: ¥1,999</li>
+                    </ul>
+                </div>
+                
+                <div class="comparison-item">
+                    <h3 class="comparison-title">小米汽车定制服务</h3>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-car sketch-icon"></i>高度个性化车辆定制</li>
+                        <li><i class="fas fa-mobile-alt sketch-icon"></i>与手机无缝互联</li>
+                        <li><i class="fas fa-tag sketch-icon"></i>价格区间: ¥139,999起</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">战略亮点</h2>
+            
+            <div class="hand-drawn-border">
+                <div class="product-card">
+                    <h3 class="product-name">全球市场表现</h3>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-globe-europe sketch-icon"></i>欧洲市场份额超越苹果</li>
+                        <li><i class="fas fa-flag sketch-icon"></i>东南亚市场首次登顶</li>
+                        <li><i class="fas fa-store sketch-icon"></i>曼谷旗舰机占比45%</li>
+                    </ul>
+                </div>
+                
+                <div class="product-card">
+                    <h3 class="product-name">生态优势</h3>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-network-wired sketch-icon"></i>全球最大AIoT生态 (6.5亿连接设备)</li>
+                        <li><i class="fas fa-robot sketch-icon"></i>澎湃OS3打通人车家场景</li>
+                        <li><i class="fas fa-car sketch-icon"></i>手机+汽车+智能设备全场景布局</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        以上内容由AI搜集并生成，仅供参考
+    </footer>
+</body>
+</html>
+<!-- 以上内容由AI搜集并生成，仅供参考 -->
+
+
+以上内容均由AI搜集总结并生成，仅供参考
